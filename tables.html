@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="style.css"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron centered">
+            <h1 class="display-4" id="potest">Hot Restaurant</h1>
+            <hr class="my-4">
+            <h2>Book your seat before they are all gone!</h2>
+            <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+            <a class="btn btn-danger btn-lg" href="/reserve" role="button">Make Reservation</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-heading reserveHeading">
+                <h4><strong>Current Reservations</strong></h4>
+            </div>
+            <div id="table-section" class="card-body">
+                <div id="entry1" class="reserveRow">hmm</div>
+                <div id="entry2" class="reserveRow hidden">test</div>
+                <div id="entry3" class="reserveRow hidden">test</div>
+                <div id="entry4" class="reserveRow hidden">test</div>
+                <div id="entry5" class="reserveRow hidden">test</div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        $("body").on("click", ".btn-primary", function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/api/tables",
+                data: newBooking,
+                success: success,
+                dataType: Object
+            });
+        });
+    </script>
+</body>
+
+</html>
